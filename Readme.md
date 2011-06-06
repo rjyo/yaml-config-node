@@ -10,6 +10,7 @@ Manage your configuration based on NODE_ENV, all configuration defined with yaml
 ## Usage
 
 In the setting file at `confing/app.yaml`.
+
 ```yaml
     default:
       redis:
@@ -29,15 +30,17 @@ In the setting file at `confing/app.yaml`.
 ```
 
 In your app.
+
 ```javascript
     var config = require('yaml-config');
 
     var settings = config.readConfig('config/app.yaml'); // path from your app root without slash
 
-    console.log(settings.redis.db); // if NODE_ENV is `development`, prints 1
+    console.log(settings.redis.db); // if NODE_ENV is development, prints 1
 ```
 
 The `readConfig` function takes a second parameter as enviroment name, for example
+
 ```javascript
     var settings = config.readConfig('config/app.yaml', 'test');
     console.log(settings.redis.db); // prints 12
