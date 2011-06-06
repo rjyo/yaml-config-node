@@ -1,0 +1,13 @@
+{
+    "name": "yaml-config"
+  , "version": "0.0.1"
+  , "description": "Manage your node.js app configuration based on NODE_ENV, all configuration defined in yaml"
+  , "keywords": []
+  , "author": "Rakuraku Jyo <jyo.rakuraku@gmail.com>"
+  , "dependencies": {
+        "log": ""
+      , "yaml": ""
+    }
+  , "main": "index"
+  , "engines": { "node": "0.4.x" }
+}
