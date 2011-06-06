@@ -12,21 +12,21 @@ Manage your configuration based on NODE_ENV, all configuration defined with yaml
 In the setting file at `confing/app.yaml`
 
 ```yaml
-    default:
-      redis:
-        port: 6379                                # redis server port
-        host: '127.0.0.1'                         # redis host
-        password: ''                              # to use with AUTH
-        db: 1                                     # the test db
-        options: {}
-    test:
-      redis:
-        db: 12
-    production:
-      redis:
-        db: 0
-      new_prop:
-        hello: 'world'
+default:
+  redis:
+    port: 6379                # redis server port
+    host: '127.0.0.1'         # redis host
+    password: ''              # to use with AUTH
+    db: 1                     # the test db
+    options: {}
+test:
+  redis:
+    db: 12
+production:
+  redis:
+    db: 0
+  new_prop:
+    hello: 'world'
 ```
 
 In your source code
