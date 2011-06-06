@@ -1,9 +1,51 @@
 
 # yaml-config
 
-  Manage your configuration based on NODE_ENV, all configuration defined with yaml
+Manage your configuration based on NODE_ENV, all configuration defined with yaml. Shared configuration can be put under `default` key, different settings under each enviroment name.
 
-## License 
+## Installation
+
+    $ npm install yaml-config
+
+## Usage
+
+In the setting file at `confing/app.yaml`.
+```yaml
+    default:
+      redis:
+        port: 6379                                # redis server port
+        host: '127.0.0.1'                         # redis host
+        password: ''                              # to use with AUTH
+        db: 1                                     # the test db
+        options: {}
+    test:
+      redis:
+        db: 12
+    production:
+      redis:
+        db: 0
+      new_prop:
+        hello: 'world'
+```
+
+In your app.
+```javascript
+    var config = require('yaml-config');
+
+    var settings = config.readConfig('config/app.yaml'); // path from your app root without slash
+
+    console.log(settings.redis.db); // if NODE_ENV is `development`, prints 1
+```
+
+The `readConfig` function takes a second parameter as enviroment name, for example
+```javascript
+    var settings = config.readConfig('config/app.yaml', 'test');
+    console.log(settings.redis.db); // prints 12
+```
+
+If the settings are used in multiple files, you may want to put the loading code in a seperate file and require it when used, so that config file will be loaded only once.
+
+## License
 
 (The MIT License)
 
