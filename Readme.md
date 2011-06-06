@@ -9,7 +9,7 @@ Manage your configuration based on NODE_ENV, all configuration defined with yaml
 
 ## Usage
 
-In the setting file at `confing/app.yaml`.
+In the setting file at `confing/app.yaml`
 
 ```yaml
     default:
@@ -29,21 +29,19 @@ In the setting file at `confing/app.yaml`.
         hello: 'world'
 ```
 
-In your app.
+In your source code
 
 ```javascript
-    var config = require('yaml-config');
-
-    var settings = config.readConfig('config/app.yaml'); // path from your app root without slash
-
-    console.log(settings.redis.db); // if NODE_ENV is development, prints 1
+var config = require('yaml-config');
+var settings = config.readConfig('config/app.yaml'); // path from your app root without slash
+console.log(settings.redis.db); // if NODE_ENV is development, prints 1
 ```
 
-The `readConfig` function takes a second parameter as enviroment name, for example
+The `readConfig()` function takes a second parameter as enviroment name, for example
 
 ```javascript
-    var settings = config.readConfig('config/app.yaml', 'test');
-    console.log(settings.redis.db); // prints 12
+var settings = config.readConfig('config/app.yaml', 'test');
+console.log(settings.redis.db); // prints 12
 ```
 
 If the settings are used in multiple files, you may want to put the loading code in a seperate file and require it when used, so that config file will be loaded only once.
