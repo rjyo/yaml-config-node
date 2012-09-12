@@ -1,6 +1,6 @@
 {
     "name": "yaml-config"
-  , "version": "0.1.0"
+  , "version": "0.2.0"
   , "description": "Manage your node.js app configuration based on NODE_ENV, all configuration defined in yaml"
   , "keywords": []
   , "author": "Rakuraku Jyo <jyo.rakuraku@gmail.com>"
