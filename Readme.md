@@ -9,7 +9,7 @@ Manage your configuration based on NODE_ENV, all configuration defined with yaml
 
 ## Usage
 
-In the setting file at `confing/app.yaml`
+In the setting file at `config/app.yaml`
 
 ```yaml
 default:
