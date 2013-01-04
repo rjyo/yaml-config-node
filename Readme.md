@@ -1,4 +1,3 @@
-
 # yaml-config
 
 Manage your configuration based on NODE_ENV, all configuration defined with yaml. Shared configuration can be put under `default` key, different settings under each enviroment name.
@@ -33,14 +32,14 @@ In your source code
 
 ```javascript
 var config = require('yaml-config');
-var settings = config.readConfig('config/app.yaml'); // path from your app root without slash
+var settings = config.readConfig('./config/app.yaml'); // path from your app root without slash
 console.log(settings.redis.db); // if NODE_ENV is development, prints 1
 ```
 
 The `readConfig()` function takes a second parameter as enviroment name, for example
 
 ```javascript
-var settings = config.readConfig('config/app.yaml', 'test');
+var settings = config.readConfig('./config/app.yaml', 'test');
 console.log(settings.redis.db); // prints 12
 ```
 
