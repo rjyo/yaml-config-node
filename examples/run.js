@@ -17,5 +17,5 @@ settings = config.readConfig(path.join(__dirname,'app.yaml'),env);
 console.log('env = %s', env);
 console.log(settings);
 settings.redis.host='10.1.50.100';
-config.writeConfig(settings, path.join(__dirname,'app.yaml'),env);
+config.updateConfig(settings, path.join(__dirname,'app.yaml'),env);
 
