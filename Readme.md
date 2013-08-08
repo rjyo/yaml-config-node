@@ -42,6 +42,14 @@ The `readConfig()` function takes a second parameter as enviroment name, for exa
 var settings = config.readConfig('./config/app.yaml', 'test');
 console.log(settings.redis.db); // prints 12
 ```
+The `updateConfig()` function will take current settings and save them back to the configuration file
+```javascript
+var settings = config.readConfig('./config/app.yaml', 'production');
+console.log(settings.redis.db); // prints 12
+settings.redis.db = 10;
+updateConfig(settings, './config/app.yaml', 'production'); //Save 10 to redis.db of the 'production' section
+updateConfig({},'./config/app.yaml', 'production'); //Will remove the entire 'production' section
+```
 
 If the settings are used in multiple files, you may want to put the loading code in a seperate file and require it when used, so that config file will be loaded only once.
 
