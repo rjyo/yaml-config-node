@@ -1,15 +1,15 @@
 {
     "name": "yaml-config"
-  , "version": "0.2.1"
+  , "version": "0.3.0"
   , "description": "Manage your node.js app configuration based on NODE_ENV, all configuration defined in yaml"
   , "keywords": []
   , "author": "Rakuraku Jyo <jyo.rakuraku@gmail.com>"
   , "scripts": {
       "test": "mocha -R spec test/*-test.js"
-  }  
+  }
   , "dependencies": {
-        "log": ""
-      , "js-yaml": ""
+        "log": "~1.4.0"
+      , "js-yaml": "~2.1.0"
     }
   , "devDependencies": {
       "mocha": "~1.12"
