@@ -4,13 +4,17 @@
   , "description": "Manage your node.js app configuration based on NODE_ENV, all configuration defined in yaml"
   , "keywords": []
   , "author": "Rakuraku Jyo <jyo.rakuraku@gmail.com>"
+  , "repository": {
+      "type": "git"
+    , "url": "https://github.com/rjyo/yaml-config-node.git"
+  }
   , "scripts": {
       "test": "mocha -R spec test/*-test.js"
   }
   , "dependencies": {
-        "log": "~1.4.0"
-      , "js-yaml": "~2.1.3"
-    }
+      "log": "~1.4.0"
+    , "js-yaml": "~2.1.3"
+  }
   , "devDependencies": {
       "mocha": "~1.13.0"
     , "chai": "~1.8.1"
